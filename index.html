@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teacher Attendance App</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+        }
+
+        form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            text-align: center;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #4caf50;
+            color: #fff;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        #attendancePage {
+            display: none;
+            text-align: center;
+        }
+
+        /* Add your styles for the attendance system */
+        .container {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .class-list,
+        .students,
+        .attendance,
+        .buttons {
+            margin-top: 20px;
+        }
+
+        select,
+        button {
+            margin-top: 10px;
+        }
+
+        #student-list,
+        #attendance-list {
+            border: 1px solid #ccc;
+            padding: 10px;
+            max-height: 600px;
+            max-width:300px;
+            overflow-y: auto;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="loginPage">
+        <form id="loginForm">
+            <h2>Login</h2>
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+
+            <button type="button" onclick="validateLogin()">Login</button>
+        </form>
+    </div>
+
+    <div id="attendancePage">
+        <h1>Main Attendance Page</h1>
+
+        <div class="container">
+            <h1>Student Attendance System</h1>
+            <div class="class-list">
+                <h2>Classes:</h2>
+                <select id="class-dropdown" onchange="loadStudents()">
+                    <option value="">Select Class</option>
+                </select>
+            </div>
+            <div class="students">
+                <h2>Students:</h2>
+                <div id="student-list"></div>
+           
+            </div>
+            <div class="buttons">
+                <button onclick="submitAttendance()">Submit Attendance</button>
+                <button onclick="viewAttendance()">View Attendance</button>
+            </div>
+        </div>
+        <script src="script.js"></script>
+    </div>
+
+    <script>
+        function validateLogin() {
+            var username = document.getElementById('username').value;
+            var password = document.getElementById('password').value;
+
+            // Check for demo purposes
+            if (username === 'teacher' && password === 'password') {
+                // On successful login, hide the login page and show the attendance page
+                document.getElementById('loginPage').style.display = 'none';
+                document.getElementById('attendancePage').style.display = 'block';
+            } else {
+                alert('Invalid username or password. Please try again.');
+            }
+        }
+    </script>
+
+</body>
+
+</html>

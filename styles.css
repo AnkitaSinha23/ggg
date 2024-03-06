@@ -1,0 +1,82 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 20px;
+  size:100%;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+h1 {
+  text-align: center;
+}
+
+.class-list,
+.students,
+.attendance {
+  width: 30%; /* Adjusted the width to make sure all elements fit */
+  margin-right: 20px;
+}
+
+.students {
+  display: none;
+  width: 50%;
+  text-align: left;
+}
+
+#student-list,
+#attendance-list {
+  border: none;
+  padding: 0;
+  max-height: 200px;
+  max-width: 200px;
+  overflow-y: auto;
+  text-align: right;
+}
+
+.student-item {
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  white-space: nowrap; /* Ensure the full name appears in one line */
+  overflow: hidden; /* Hide overflow content */
+}
+
+.checkbox-label {
+  margin-bottom: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.checkbox-input {
+  margin-left: 5px;
+}
+
+.buttons {
+  clear: both;
+  margin-top: 20px;
+  text-align: center;
+}
+
+button {
+  padding: 5px 10px;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+#class-dropdown {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+}
+
+#student-list .student-item span {
+  text-overflow: ellipsis; /* Show ellipsis (...) for overflow content */
+  overflow: hidden;
+  display: inline-block;
+  max-width: calc(100% - 30px); /* Adjust the value based on your layout */
+}
